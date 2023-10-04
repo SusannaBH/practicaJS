@@ -1,9 +1,23 @@
-let names = "Susanna";
-let surname = "Bergaz Hernández";
+const names = "Susanna";
+const surname = "Bergaz Hernández";
 
 //FUNCION arrow function
-nameSurname = () => {
-    console.log(names + " " + surname);
+const nameSurname = () => {
+    return names + " " + surname;
 }
-nameSurname();
+console.log(nameSurname());
 
+//FUNCION con nombre y sin return
+const verdadero = true;
+function comprobar(bool_value){
+    console.log("Esto es " + bool_value);
+}
+comprobar(verdadero);
+
+//FUNCION con parametros infinitos
+const funcionInfinita = (...parametros) => {
+    parametros.forEach(element => {
+        console.log(element);
+    });
+}
+funcionInfinita(1,2,3,4,5);
