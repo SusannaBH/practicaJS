@@ -1,5 +1,8 @@
 //ARRAY inicial con los emojis que mostraremos
-const emojis = ["🍎","🥑","🌶️","🥝","🍳","🍚","🧁","🍭","🍺","🍉","🫐","🥦"];
+const emojis = ["🍎","🥑","🌶️","🥝","🍳","🍚","🧁",
+                "🍭","🍺","🍉","🫐","🥦","🍋","🍍",
+                "🍕","🍟","🥞","🥩","🍱","🍢","🥥",
+                "🥒","🥜","🫓","🍩","🍰","🥛","🍮"];
 //ARRAY final que crearemos con el resultado
 let resultado = [];
 
@@ -8,7 +11,11 @@ const insertAtpositionEl = document.getElementById('posicionSumar');
 const removeAtpositionEl = document.getElementById('posicionRestar');
 const resultadoDOM = document.getElementById('resultadoFinal');
 const btnPushEl = document.getElementById('push');
-const btnInsertAt = document.getElementById('insertAt');
+const btnUnshiftEl = document.getElementById('unshift');
+const btnInsertAtEl = document.getElementById('insertAt');
+const btnPopEl = document.getElementById('pop');
+const btnShiftEl = document.getElementById('shift');
+const btnRemoveAtEl = document.getElementById('removeAt');
 
 //INDICES marcados por el usuario para sumar o restar emojis del array final
 function validarInput (event) {
@@ -35,7 +42,7 @@ function addPush() {
 //FUNCION añadir emojis al principio
 function addUnshift() {
     resultado.unshift(emojis[aleatorio()]);
-    console.log(resultado);
+    updateArrayInDOM();
 }
 //addUnshift();
 
@@ -49,21 +56,21 @@ function addInsertAt() {
 //FUNCION añadir emojis al final
 function addPop() {
     resultado.pop();
-    console.log(resultado);
+    updateArrayInDOM();
 }
 //addPop();addPop();
 
 //FUNCION añadir emojis al principio
 function addShift() {
     resultado.shift();
-    console.log(resultado);
+    updateArrayInDOM();
 }
 //addShift();
 
 //FUNCION añadir emojis por indice marcado por usuario
 function addRemoveAt() {
     resultado.splice(removeAtpositionEl.value-1, 1);
-    console.log(resultado);
+    updateArrayInDOM();
 }
 //addRemoveAt();
 
@@ -74,10 +81,15 @@ function updateArrayInDOM(){
 
 /* TODOS LOS EVENTOS */
 insertAtpositionEl.addEventListener('input', validarInput);
-btnInsertAt.addEventListener('click', addInsertAt);
-/* btnInsertAt.addEventListener('click', () => {
+btnInsertAtEl.addEventListener('click', addInsertAt);
+/* OTRA FORMA DE HACERLO
+    btnInsertAt.addEventListener('click', () => {
     addInsertAt();
     updateArrayInDOM();
 }); */
 removeAtpositionEl.addEventListener('input', validarInput);
+btnRemoveAtEl.addEventListener('click', addRemoveAt);
 btnPushEl.addEventListener('click', addPush);
+btnUnshiftEl.addEventListener('click', addUnshift);
+btnPopEl.addEventListener('click', addPop);
+btnShiftEl.addEventListener('click', addShift);
