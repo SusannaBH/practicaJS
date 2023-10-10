@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    background-color: coral;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header > h1{
+    color: aquamarine;
+    border: 1px solid;
+    background-color: darkcyan;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3);
+}
+header > div > img{
+    width: 25vw;
+    border: 4px dotted darkcyan;
+    margin: 5px;
+    box-shadow: 0 8px 8px 0 rgba(8, 113, 103, 0.3);
+}
+.pictures{
+    display: flex;
+    justify-content: space-between;
+}
+#solucion{
+    width: 30vw;
+    height: 30vh;
+    background-color: white;
+}
+#play{
+    margin-top: 20px;
+    border: 3px solid darkcyan;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.jugador{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main > div > img{
+    width: 15vw;
+}
