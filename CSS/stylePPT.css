@@ -15,14 +15,32 @@ header > div > img{
     margin: 5px;
     box-shadow: 0 8px 8px 0 rgba(8, 113, 103, 0.3);
 }
+.imagen:active{
+    border: 2px dotted aquamarine;
+}
 .pictures{
     display: flex;
     justify-content: space-between;
 }
 #solucion{
     width: 30vw;
-    height: 30vh;
+    height: auto;
     background-color: white;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+#solucion > button{
+    border-radius: 60%;
+    width: 10vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#solucion > button:hover{
+    color: coral;
+    font-size: 20px;
+    border: solid darkcyan 2px;
 }
 #play{
     margin-top: 20px;
