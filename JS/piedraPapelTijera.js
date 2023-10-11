@@ -13,7 +13,9 @@ const imagenDOM = document.getElementById('imagenMachine');
 const resultado = document.getElementById('resultado');
 const refreshButton = document.getElementById('refresh');
 
+//Iniciamor el resultado
 resultado.innerText = "¡Pulsa una opción!";
+
 //FUNCION aleatoria para calcular lo que elije la maquina
 function aleatorio() {
     var opcion = opcions[Math.floor(Math.random()*opcions.length)];
@@ -67,11 +69,9 @@ function controlGanador(user, machine){
 
 //FUNCION para darle valor a las imagenes del usuario
 function jugada(e){
-    selectUser = seleccionUser(e); // esta funcion al que le pasamos el evento devuelve '🪨', '🧻' o '✂️' y la asignamos
-    opcionMachine = aleatorio(); // con esta llamamos aleatorio que devuelve '🪨', '🧻' o '✂️' y asignamos
-    cambiarImagenMaquina(opcionMachine);
-    //ahora tenemos las dos elecciones y aqui empieza la logica del ganador
-    // para eso creamos una funcion separada
+    selectUser = seleccionUser(e); // le pasamos el evento y devuelve '🪨', '🧻' o '✂️' y asignamos
+    opcionMachine = aleatorio(); // llamamos aleatorio() y devuelve '🪨', '🧻' o '✂️' y asignamos
+    cambiarImagenMaquina(opcionMachine); // aplicamos el cambio de imagen en la maquina
     controlGanador(selectUser, opcionMachine);
 }
 
